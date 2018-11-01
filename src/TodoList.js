@@ -3,6 +3,7 @@ import NewTodoForm from './NewTodoForm';
 import uuid from 'uuid/v4';
 import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
+import './TodoList.css';
 
 class TodoList extends Component {
   constructor(props) {
@@ -69,8 +70,11 @@ class TodoList extends Component {
     });
     return (
       <div className="TodoList">
-        <NewTodoForm handleNewTodo={this.addTodos} />
-        <ul>{todos}</ul>
+        <div className="TodoList-newTodoContainer">
+          <h1>SQL King Task Master</h1>
+          <NewTodoForm handleNewTodo={this.addTodos} />
+        </div>
+        <div className="TodoList-todos">{todos}</div>
       </div>
     );
   }
